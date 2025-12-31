@@ -1,0 +1,133 @@
+$fondo: #22436e83;
+$font-primary: 'Inter', sans-serif;
+$text: #ffffff;
+$fondo-body: url("../img/Fondo-Body.jpg");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: $text;
+  font-weight: none;
+
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $text;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $text;
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: $text;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: $text;
+}
+
+p {
+  font-size: .9rem;
+  color: $text;
+}
+
+body {
+  background-image: $fondo-body;
+  font-family: $font-primary;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+header {
+    background-color: $fondo;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 8em;
+    justify-content: center;
+    height: 1.5em;
+    padding-top: .1em;
+    padding-bottom: .5em;
+    margin: 1em;
+    a {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;     
+        margin: 2em;
+        padding: 1em;
+    }
+}
+
+
+
+.container {
+  background: $text;
+  padding: 30px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  h2 {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.input-area {
+  display: flex;
+  gap: 5px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  font-size: 17px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background: #eaeaea;
+  padding: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+li button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+}
+

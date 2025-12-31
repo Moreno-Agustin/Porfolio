@@ -1,0 +1,298 @@
+// ==================
+// VARIABLES
+// ==================
+
+// neomorfismo
+$bg: #15202b8a;
+$bg-buton: #003dad;
+
+// sombras
+$neo-shadow-dark: rgba(0, 0, 0, 0.45);
+$neo-shadow-light: rgba(255, 255, 255, 0.534);
+
+// colores
+$fondo: #22436e83;
+$navbar: #012472;
+$text: #ffffff;
+$accent: #00b7ff;
+$btn: #003dad;
+$btn-hover: #001a38;
+$btn-fondo: #001d2459;
+$lenguaje-fondo: #50505080;
+
+// tipografía
+$font-primary: 'Inter', sans-serif;
+
+// fondo
+$fondo-body: url("../img/Fondo-Body.jpg");
+
+
+// ==================
+// BASE
+// ==================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: $text;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: $text;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: $text;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 100;
+  color: $text;
+}
+
+p {
+  font-size: 1em;
+  color: $text;
+  margin: 10px;
+}
+
+
+// ==================
+// MIXINS
+// ==================
+
+@mixin neo($depth, $radius, $blur) {
+  background: $bg;
+  border-radius: $radius;
+  box-shadow:
+    inset  $depth  $depth  ($blur * 0.6) $neo-shadow-dark,
+    inset -$depth -$depth ($blur * 0.6) $neo-shadow-light;
+}
+
+@mixin neo-buton($depth, $radius, $blur) {
+  background: $bg-buton;
+  border-radius: $radius;
+  box-shadow:
+    inset  ($depth)  ($depth)  ($blur * 0.6) rgba(0, 0, 0, 0.25),
+    inset  (-$depth) (-$depth)  ($blur * 0.6) rgba(255, 255, 255, 0.1),
+}
+
+
+// ==================
+// BODY
+// ==================
+
+body {
+  background-image: $fondo-body;
+  font-family: $font-primary;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+// ==================
+// HEADER
+// ==================
+
+header {
+  background-color: $fondo;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 8em;
+  height: 1.5em;
+  padding-top: .1em;
+  margin: 1em;
+
+  a {
+    margin: 2em;
+    padding: 1em;
+  }
+}
+
+
+// ==================
+// CARDS
+// ==================
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  justify-items: center;
+  margin-top: 20px;
+
+  .card {
+    width: 96%;
+    height: 450px;
+    @include neo(1em, 1em, 1em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all .4s ease;
+
+    img {
+      width: 80%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-desc {
+      max-width: 70%;
+      margin: auto;
+    }
+
+    // 🔹 DESCRIPCIÓN LARGA OCULTA POR DEFECTO
+    .card-desc.full {
+      display: none;
+    }
+
+    .expand {
+      @include neo-buton(1em, 1em, 1em);
+      width: 5em;
+      height: 2em;
+      border-radius: 20px;
+      border: none;
+      background-color: $btn;
+      color: $text;
+      margin: 10px auto;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #003674;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .stack {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .lenguajes {
+      width: 6em;
+      height: 1.5em;
+      font-size: 11px;
+      background-color: $lenguaje-fondo;
+      border-radius: 20px;
+      border: none;
+      color: $text;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover:not(.active) {
+      box-shadow: 10px 10px 20px #0a1118,
+                  -10px -10px 20px #20406e;
+      transform: translateY(-5px);
+    }
+
+    // ==================
+    // CARD ACTIVA
+    // ==================
+
+    &.active {
+      background-color: #0b2946;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 90vw;
+      height: 90vh;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      padding: 2em;
+      display: flex;
+      flex-direction: row;
+      gap: 3em;
+
+      img {
+        width: 65%;
+        height: 70%;
+        object-fit: contain;
+        border-radius: 20px;
+      }
+
+      .card-content {
+        width: 45%;
+        text-align: center;
+      }
+
+      // 🔹 OCULTA DESCRIPCIÓN CORTA
+      .card-desc.short {
+        display: none;
+      }
+
+      // 🔹 MUESTRA DESCRIPCIÓN LARGA
+      .card-desc.full {
+        display: block;
+      }
+
+      h3 {
+        font-size: 1.7em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      .lenguajes {
+        padding-top: 5px;
+        width: 10em;
+        height: 2em;
+        font-size: 15px;
+      }
+
+      .expand {
+        width: 80px;
+        height: 40px;
+        font-size: 17px;
+      }
+    }
+  }
+
+  // ==================
+  // RESPONSIVE
+  // ==================
+
+  @media screen and (max-width: 1830px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 770px) {
+    grid-template-columns: 1fr;
+  }
+}

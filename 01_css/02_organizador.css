@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: none;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+body {
+  background-image: url("../img/Fondo-Body.jpg");
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+header {
+  background-color: rgba(34, 67, 110, 0.5137254902);
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 8em;
+  justify-content: center;
+  height: 1.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.5em;
+  margin: 1em;
+}
+header a {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin: 2em;
+  padding: 1em;
+}
+
+.container {
+  background: #ffffff;
+  padding: 30px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: black;
+}
+.container .input-area {
+  display: flex;
+  gap: 5px;
+}
+.container input {
+  flex: 1;
+  padding: 8px;
+  font-size: 17px;
+}
+.container button {
+  padding: 8px;
+  cursor: pointer;
+}
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+.container li {
+  background: #eaeaea;
+  padding: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+.container li button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=02_organizador.css.map */

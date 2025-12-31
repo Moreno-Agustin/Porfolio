@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 100;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1em;
+  color: #ffffff;
+  margin: 10px;
+}
+
+body {
+  background-image: url("../img/Fondo-Body.jpg");
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+header {
+  background-color: rgba(34, 67, 110, 0.5137254902);
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 8em;
+  height: 1.5em;
+  padding-top: 0.1em;
+  margin: 1em;
+}
+header a {
+  margin: 2em;
+  padding: 1em;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  justify-items: center;
+  margin-top: 20px;
+}
+.cards-container .card {
+  width: 96%;
+  height: 450px;
+  background: rgba(21, 32, 43, 0.5411764706);
+  border-radius: 1em;
+  box-shadow: inset 1em 1em 0.6em rgba(0, 0, 0, 0.45), inset-1em-1em 0.6em rgba(255, 255, 255, 0.534);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.cards-container .card img {
+  width: 80%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cards-container .card .card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cards-container .card .card-desc {
+  max-width: 70%;
+  margin: auto;
+}
+.cards-container .card .card-desc.full {
+  display: none;
+}
+.cards-container .card .expand {
+  background: #003dad;
+  border-radius: 1em;
+  box-shadow: inset 1em 1em 0.6em rgba(0, 0, 0, 0.25), inset -1em -1em 0.6em rgba(255, 255, 255, 0.1);
+  width: 5em;
+  height: 2em;
+  border-radius: 20px;
+  border: none;
+  background-color: #003dad;
+  color: #ffffff;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.cards-container .card .expand:hover {
+  background-color: #003674;
+  transition: all 0.3s ease;
+}
+.cards-container .card .stack {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards-container .card .lenguajes {
+  width: 6em;
+  height: 1.5em;
+  font-size: 11px;
+  background-color: rgba(80, 80, 80, 0.5019607843);
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards-container .card:hover:not(.active) {
+  box-shadow: 10px 10px 20px #0a1118, -10px -10px 20px #20406e;
+  transform: translateY(-5px);
+}
+.cards-container .card.active {
+  background-color: #0b2946;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  height: 90vh;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+}
+.cards-container .card.active img {
+  width: 65%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+.cards-container .card.active .card-content {
+  width: 45%;
+  text-align: center;
+}
+.cards-container .card.active .card-desc.short {
+  display: none;
+}
+.cards-container .card.active .card-desc.full {
+  display: block;
+}
+.cards-container .card.active h3 {
+  font-size: 1.7em;
+}
+.cards-container .card.active p {
+  font-size: 1.2em;
+}
+.cards-container .card.active .lenguajes {
+  padding-top: 5px;
+  width: 10em;
+  height: 2em;
+  font-size: 15px;
+}
+.cards-container .card.active .expand {
+  width: 80px;
+  height: 40px;
+  font-size: 17px;
+}
+@media screen and (max-width: 1830px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 770px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=03_galeria.css.map */
