@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2 class="macro">
+                    Macro
+                </h2>
+                <h2 class="tracker">
+                    Tracker
+                </h2>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="usuario">
+                <img src="IMG/usuario.png" alt="">
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="container-resumen">
+            <h2 class="resumen">Resumen de Hoy</h2>
+            <div class="resumen-contenido">
+                <div class="resumen-item">
+                    <div class="resumen-top">
+                        <h3 class="resumen-item-titulo">Calorías</h3>
+                        <p class="resumen-item-valor">
+                            <span class="actual" id="kcalActual">0</span> /
+                            <span class="objetivo" id="kcalObj">2700</span> kcal
+                        </p>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-progreso barra-calorias" id="barraKcal"></div>
+                    </div>
+                </div>
+
+                <div class="resumen-item">
+                    <div class="resumen-top">
+                        <h3 class="resumen-item-titulo">Proteínas</h3>
+                        <p class="resumen-item-valor">
+                            <span class="actual" id="proActual">0</span> /
+                            <span class="objetivo" id="proObj">150</span> g
+                        </p>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-progreso barra-proteina" id="barraPro"></div>
+                    </div>
+                </div>
+
+                <div class="resumen-item">
+                    <div class="resumen-top">
+                        <h3 class="resumen-item-titulo">Carbohidratos</h3>
+                        <p class="resumen-item-valor">
+                            <span class="actual" id="carbActual">0</span> /
+                            <span class="objetivo" id="carbObj">365</span> g
+                        </p>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-progreso barra-carbo" id="barraCarb"></div>
+                    </div>
+                </div>
+
+                <div class="resumen-item">
+                    <div class="resumen-top">
+                        <h3 class="resumen-item-titulo">Grasas</h3>
+                        <p class="resumen-item-valor">
+                            <span class="actual" id="grasActual">0</span> /
+                            <span class="objetivo" id="grasObj">70</span> g
+                        </p>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-progreso barra-grasa" id="barraGrasa"></div>
+                    </div>
+                </div>
+
+                <hr class="linea">
+                <div class="acciones">
+                    <button class="btn-añadir">+ Añadir Comida</button>
+                    <button class="btn-escanear">⚡️ Escanear Codigo</button>
+                    <button class="btn-buscar"><img class="buscar" src="IMG/lupa.png" alt=""> Buscar alimento</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="progreso">
+
+            <h2 class="progreso-titulo">Progreso de hoy</h2>
+            <button class="btn-guardar">Guardar día</button>
+            <button class="btn-reiniciar">Reiniciar</button>
+
+            <div class="historial">
+                <h3 class="historial-titulo">Historial</h3>
+                <div class="historial-lista" id="historialLista"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <div id="container-dias-guardados" class="container-dias-guardados">
+        <h2 class="titulo-dias">📅 Historial de Días Guardados</h2>
+        <div id="lista-dias" class="lista-dias"></div>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,571 @@
+// ==============================
+//  MacroTracker - Variables SCSS
+// ==============================
+
+// ---------- TIPOGRAFÍA ----------
+$font-primary: "Inter", sans-serif;
+// Alternativa:
+// $font-primary: "Poppins", sans-serif;
+
+// ---------- BASE (FONDOS / TEXTO) ----------
+$bg-main: #f5f7fb; // fondo general
+$bg-card: #ffffff; // tarjetas / contenedores
+$bg-sidebar: #d0d7da; // panel lateral suave
+
+$text-main: #243358; // texto principal
+$text-secondary: #2e5791; // texto secundario
+
+$border-soft: #d2d7e0; // bordes suaves
+
+// ---------- COLORES MACROS ----------
+$macro-calories: #f97316; // calorías (naranja)
+$macro-protein: #2563eb; // proteínas (azul)
+$macro-carbs: #22c55e; // carbohidratos (verde)
+$macro-fats: #f59e0b; // grasas (ámbar)
+
+// ---------- BOTONES ----------
+$btn-primary: #22c55e; // añadir comida (verde)
+$btn-secondary: #7c3aed; // buscar alimento (violeta)
+$btn-info: #2563eb; // escanear (azul)
+$btn-danger: #ef4444; // eliminar (rojo)
+
+$btn-hover: #1e4c80; // hover general (azul)
+
+// ---------- SOMBRAS ----------
+$shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+// ---------- RADIOS ----------
+$radius-sm: 10px;
+$radius-md: 14px;
+$radius-lg: 18px;
+
+// ---------- ESPACIADOS ----------
+$space-xs: 6px;
+$space-sm: 10px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+// ---------- TRANSICIONES ----------
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+
+// ---------- Navbar ----------
+$bg-dark: #f1f1f1;
+
+
+//=========== 
+// Reset
+//=========== 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $bg-dark;
+    border: solid 1px $border-soft;
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+h6 {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+//=========== 
+// Navbar
+//=========== 
+
+.navbar {
+    background-color: $bg-dark;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 1px $border-soft;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+
+        h2 {
+            color: $text-main;
+        }
+
+        .tracker {
+            color: $text-secondary;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+
+        a {
+            color: $text-main;
+            font-size: 18px;
+            font-weight: 200;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 2px;
+                background-color: $text-main;
+                transition: $transition-normal;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+            &:hover {
+                color: $btn-hover;
+            }
+        }
+    }
+
+    .usuario {
+        justify-content: flex-end;
+    }
+}
+
+//=============
+// Resumen Hoy
+//=============
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+
+
+}
+
+.container-resumen {
+    align-self: flex-start;
+    padding: $space-lg;
+    margin: 2rem 1rem;
+    width: 60%;
+    border: solid 1px $border-soft;
+    border-radius: $radius-lg;
+    background-color: $bg-card;
+    box-shadow: $shadow-soft;
+
+    .resumen {
+        font-size: 1.5rem;
+        color: $text-secondary;
+        margin-bottom: $space-lg;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .resumen-contenido {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-md;
+        margin-bottom: $space-lg;
+
+        .resumen-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: solid 1px $border-soft;
+            border-radius: $radius-md;
+            background-color: $bg-card;
+            padding: $space-md;
+            margin: 0;
+            text-align: center;
+            transition: $transition-normal;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: $shadow-soft;
+            }
+
+            .resumen-item-titulo {
+                font-size: 1rem;
+                color: $text-secondary;
+                margin-bottom: $space-sm;
+                font-weight: 500;
+            }
+
+            .resumen-item-valor {
+                font-size: 1.5rem;
+                color: $text-main;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            // Colores vibrantes para cada macro
+            &:nth-of-type(1) {
+                border-top: 4px solid $macro-calories;
+
+                .resumen-item-valor {
+                    color: $macro-calories;
+                }
+            }
+
+            &:nth-of-type(2) {
+                border-top: 4px solid $macro-protein;
+
+                .resumen-item-valor {
+                    color: $macro-protein;
+                }
+            }
+
+            &:nth-of-type(3) {
+                border-top: 4px solid $macro-carbs;
+
+                .resumen-item-valor {
+                    color: $macro-carbs;
+                }
+            }
+
+            &:nth-of-type(4) {
+                border-top: 4px solid $macro-fats;
+
+                .resumen-item-valor {
+                    color: $macro-fats;
+                }
+            }
+        }
+
+        .linea {
+            grid-column: 1 / -1;
+            width: 100%;
+            border: none;
+            border-top: 1px solid $border-soft;
+            margin: $space-md 0;
+        }
+
+        .acciones {
+            display: flex;
+            flex-direction: row;
+            gap: $space-sm;
+            grid-column: 1 / -1;
+            margin-top: $space-md;
+            justify-content: center;
+        }
+
+        .btn-añadir,
+        .btn-escanear,
+        .btn-buscar {
+            color: $bg-card !important;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $space-sm $space-md;
+            border: none;
+            border-radius: $radius-md;
+            cursor: pointer;
+            transition: $transition-normal;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+
+            &:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .btn-añadir {
+            background-color: $btn-primary;
+            color: white;
+
+            &:hover {
+                background-color: darken($btn-primary, 10%);
+            }
+        }
+
+        .btn-escanear {
+            background-color: $btn-secondary;
+            color: white;
+
+            &:hover {
+                background-color: darken($btn-secondary, 10%);
+            }
+        }
+
+        .btn-buscar {
+            background-color: $btn-info;
+            color: white;
+            gap: $space-sm;
+
+            .buscar {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                background-color: darken($btn-info, 10%);
+            }
+        }
+    }
+
+    // Barra base
+    .barra {
+        width: 100%;
+        height: 12px;
+        background: #e9edf7;
+        border-radius: 999px;
+        overflow: hidden;
+    }
+
+    .barra-progreso {
+        height: 100%;
+        width: 0%;
+        border-radius: 999px;
+        transition: width 0.4s ease;
+    }
+
+    // Colores de cada macro
+    .barra-calorias {
+        background: $macro-calories;
+    }
+
+    .barra-proteina {
+        background: $macro-protein;
+    }
+
+    .barra-carbo {
+        background: $macro-carbs;
+    }
+
+    .barra-grasa {
+        background: $macro-fats;
+    }
+}
+
+.progreso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: $space-md;
+    background-color: $bg-sidebar;
+    padding: $space-md;
+    border-radius: $radius-lg;
+
+    .progreso-titulo {
+        font-size: 1.5rem;
+        color: $text-main;
+        font-weight: 600;
+        margin-bottom: $space-md;
+    }
+
+    .btn-guardar,
+    .btn-reiniciar {
+        color: $text-main;
+        font-size: 1rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $space-sm $space-md;
+        border: none;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        transition: $transition-normal;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 8px;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .btn-guardar {
+        background-color: $btn-info;
+        color: white !important;
+
+        &:hover {
+            background-color: darken($btn-info, 10%);
+        }
+    }
+}
+
+//===========
+// Historial
+//===========
+.historial {
+    width: 100%;
+    margin-top: $space-md;
+    padding-top: $space-md;
+    border-top: 1px solid $border-soft;
+}
+
+.historial-titulo {
+    color: $text-main;
+    font-size: 1.1rem;
+    margin-bottom: $space-sm;
+}
+
+.historial-lista {
+    display: grid;
+    gap: $space-sm;
+}
+
+.historial-item {
+    background: $bg-card;
+    border: 1px solid $border-soft;
+    border-radius: $radius-md;
+    padding: $space-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.historial-fecha {
+    font-weight: 700;
+    color: $text-main;
+}
+
+.historial-macros {
+    font-size: 0.9rem;
+    color: $text-secondary;
+}
+
+.historial-borrar {
+    margin-top: 6px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    &:hover {
+        background: darken(#ef4444, 10%);
+    }
+}
+
+//===========
+// Dias Guardados
+//===========
+.container-dias-guardados {
+    width: 90%;
+    margin: 2rem auto;
+    padding: $space-lg;
+    background-color: $bg-card;
+    border: 1px solid $border-soft;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-soft;
+
+    .titulo-dias {
+        font-size: 1.5rem;
+        color: $text-secondary;
+        margin-bottom: $space-md;
+        text-align: center;
+    }
+
+    .lista-dias {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: -md;
+    }
+
+    .dia-card {
+        background: $bg-main;
+        border: 1px solid $border-soft;
+        border-radius: $radius-md;
+        padding: $space-md;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+        transition: -normal;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: -soft;
+        }
+
+        h4 {
+            color: $text-main;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .btn-borrar-dia-historial {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            color: -secondary;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: -danger;
+            }
+        }
+    }
+}
